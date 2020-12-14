@@ -32,8 +32,13 @@ exports.createEvent = (req, res, next) => {
     })
 }
 
-exports.getEvents = () => {
-
+exports.getEvents = (req, res, next) => {
+    console.log('user id', req.userId)
+    Event.find({creator: req.userId.toString()}).then(events => {
+        res.status(200).json({
+            events: events
+        })
+    }).catch(err => console.log(err));
 }
 
 exports.getEvent = () => {
