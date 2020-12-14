@@ -9,6 +9,7 @@ const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const plansRouter = require('./routes/plans');
 const authRouter = require('./routes/auth');
+const eventRouter = require('./routes/event');
 const mongoConnect = require('./util/databse');
 
 const app = express();
@@ -44,6 +45,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
 app.use('/plans',plansRouter);
+app.use('/events', eventRouter);
 app.use('/auth', authRouter);
 
 

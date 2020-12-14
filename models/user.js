@@ -14,22 +14,25 @@ const userSchema = new Schema({
         type:String,
         required: true
     },
+    lastName: {
+      type: String,
+      required: true
+    },
+    phone: {
+      type: String,
+      required: true
+    },
     status:{
         type:String,
         default: 'I am new'
     },
-    plans:[
+    events:[
         {
             type: Schema.Types.ObjectId,
-            ref:'Plans'
+            ref:'Events'
         }
     ],
-    trainings:[
-        {
-            type:Schema.Types.ObjectId,
-            ref:'Trainings'
-        }
-    ]
+
 });
 
 module.exports = mongoose.model('User',userSchema);
