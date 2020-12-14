@@ -8,6 +8,7 @@ exports.createEvent = (req, res, next) => {
     const event = new Event({
         name: body.name,
         date: body.date,
+        hour: body.hour,
         creator: body.userId
     });
     event.save().then(() => {

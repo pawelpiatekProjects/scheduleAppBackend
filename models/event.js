@@ -7,12 +7,14 @@ const eventSchema = new Schema({
             type: String,
             required: true
         },
-        date: [
-            {
-                type: Schema.Types.Date,
-                required: true
-            }
-        ],
+        date: {
+            type: String,
+            required: true
+        },
+        hour: {
+            type: String,
+            required: true
+        },
         creator: {
             type: Schema.Types.ObjectId,
             ref: 'User',
