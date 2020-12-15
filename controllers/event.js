@@ -9,6 +9,7 @@ exports.createEvent = (req, res, next) => {
         name: body.name,
         date: body.date,
         hour: body.hour,
+        description: body.description,
         creator: body.userId
     });
     event.save().then(() => {
