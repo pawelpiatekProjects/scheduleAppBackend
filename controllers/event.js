@@ -42,6 +42,24 @@ exports.getEvents = (req, res, next) => {
     }).catch(err => console.log(err));
 }
 
+exports.deleteEvent = (req, res, next) => {
+    const eventId = req.body.eventId;
+    const userId = req.body.userId;
+    console.log('eventId: ', eventId);
+    Event.findByIdAndDelete(eventId).then(res => {
+        return User.findById(userId);
+    }).then(user => {
+        user.events = user.events.filter(event => event !== eventId);
+        return user.save();
+    }).then(result => {
+        res.status(201).json({
+            message: 'Deleted event',
+        })
+    }).catch(err => {
+        console.log(err);
+    })
+}
+
 exports.getEvent = () => {
 
 }

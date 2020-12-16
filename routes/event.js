@@ -8,6 +8,8 @@ const router = express.Router();
 
 router.post('/new', isAuth, eventsController.createEvent);
 
+router.post('/delete', isAuth, eventsController.deleteEvent);
+
 router.get('/all', isAuth, eventsController.getEvents);
 
 router.get('/all/:id', isAuth, eventsController.getEvent);
