@@ -42,7 +42,7 @@ app.use(cors())
 
 //Routes
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/user', usersRouter);
 
 app.use('/plans',plansRouter);
 app.use('/events', eventRouter);

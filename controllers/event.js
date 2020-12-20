@@ -60,6 +60,23 @@ exports.deleteEvent = (req, res, next) => {
     })
 }
 
+exports.editEvent = (req, res, next) => {
+    const {body: {id, name, date, hour, description}} = req;
+    console.log('id: ', id);
+    Event.findByIdAndUpdate(id, {
+        name: name,
+        date: date,
+        hour: hour,
+        description: description
+    }).then(result => {
+        res.status(201).json({
+            message: 'Updated event'
+        })
+    }).catch(err => {
+        console.log(err);
+    })
+}
+
 exports.getEvent = () => {
 
 }

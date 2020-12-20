@@ -10,6 +10,8 @@ router.post('/new', isAuth, eventsController.createEvent);
 
 router.post('/delete', isAuth, eventsController.deleteEvent);
 
+router.put('/edit', isAuth, eventsController.editEvent);
+
 router.get('/all', isAuth, eventsController.getEvents);
 
 router.get('/all/:id', isAuth, eventsController.getEvent);

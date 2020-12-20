@@ -4,6 +4,6 @@ const userController = require('../controllers/user');
 const isAuth = require('../middleware/isAuth');
 
 /* GET users listing. */
-router.get('/', isAuth, userController.getUser);
+router.get('/:userId', isAuth, userController.getUser);
 
 module.exports = router;
