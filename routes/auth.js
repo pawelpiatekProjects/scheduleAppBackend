@@ -7,6 +7,7 @@ const authController = require('../controllers/auth');
 const router = express.Router();
 
 
+
 //todo: add validation in all routes
 router.post('/signup',[
     body('email')

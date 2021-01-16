@@ -39,9 +39,7 @@ app.use((error, req, res, next) => {
 })
 
 mongoose
-    .connect(
-        'mongodb+srv://admin:admin@cluster0.de41n.mongodb.net/schedule?retryWrites=true&w=majority'
-    )
+    .connect(process.env.MONGO_KEY)
     .then(result => {
         app.listen(8080);
     })
